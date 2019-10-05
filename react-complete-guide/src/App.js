@@ -4,7 +4,7 @@ import Person from './Person/Person';
 import Dialog from './Dialog/Dialog';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {ButtonToolbar, Button} from 'react-bootstrap';
-// import Radium, {StyleRoot} from 'radium';
+import Radium, {StyleRoot} from 'radium';
 
 class App extends Component {
   state = {
@@ -127,7 +127,7 @@ class App extends Component {
     }
 
     return (
-      // <StyleRoot>
+      <StyleRoot>
         <div className="App">
         <ButtonToolbar>
           <Button variant="primary" onClick={() => this.setModalShow(true)}>
@@ -142,12 +142,12 @@ class App extends Component {
           onClick={this.togglePersonsHandler}>Toggle Persons</button>
         {persons}
       </div>
-      // </StyleRoot>
+      </StyleRoot>
       
     );
     // return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Does this work now?'));
   }
 }
 
-export default App;
+export default Radium(App);
 
